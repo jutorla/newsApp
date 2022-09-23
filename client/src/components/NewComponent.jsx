@@ -4,12 +4,13 @@ import ButtonComponent from './ButtonComponent';
 
 export default function NewView(props){
   const {
+    id,
     title,
     description,
     date,
     content,
     author,
-    archiveNew,
+    changeStatus,
   } = props;
 
     return(
@@ -17,8 +18,7 @@ export default function NewView(props){
         <div className="new-view-header">
           <div className="new-view-header-title">{title}</div>
           <span className="new-view-heaer-date">Date: {date}</span>
-          {console.log(archiveNew)}
-          <span className="new-view-header-archive"><ButtonComponent text="Archive" onClick={archiveNew} /></span>
+          <span className="new-view-header-archive"><ButtonComponent text="Archive" onClick={changeStatus()} param={id}/></span>
         </div>
         <div className="new-view-body">
           <span className="new-view-body-content">{content}</span>

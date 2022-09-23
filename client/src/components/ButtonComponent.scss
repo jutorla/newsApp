@@ -1,0 +1,11 @@
+.button{
+    border-style: dotted;
+    border-width: 1px;
+    border-color: black;
+    font-size: 0.8rem;
+    .button-text{
+        padding: 10px;
+        width:64px;
+        height:64px;
+    }
+}

@@ -15,15 +15,16 @@ function NewContainer(props) {
       newData: fetchedNews.data,
       }));
     }
-   async function archiveNew(){
-      console.log("ArchiveNew");
+   async function archiveNew(id){
+      await (Api.archiveNew(id))
+      fetchNews()
       }
 
  return(
       <NewsView
       fetchNews={fetchNews}
       newData={values.newData}
-      archiveNew={archiveNew}
+      changeStatus={()=>archiveNew}
       />
 
   );

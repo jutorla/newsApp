@@ -1,9 +1,32 @@
+import React, { useContext, useEffect, useState } from 'react';
 import ArchivedView from "./ArchivedView"
-const archivedContainer = () => {
-  return(
-    <div className="Archived-container">
-      <ArchivedView/>
-    </div>
+import Api from '../api/Api';
+
+function ArchivedContainer(props) {
+  const [values, setValues] = useState({
+    newData: [],
+  })
+
+  async function fetchArchivedNews(){
+    const fetchedNews= await (Api.archived());
+    console.log(fetchedNews.data);
+    setValues((oldValues) => ({
+      ...oldValues,
+      newData: fetchedNews.data,
+      }));
+    }
+   async function unArchiveNew(id){
+    await (Api.unArchiveNew(id))
+    fetchArchivedNews()
+      }
+
+ return(
+      <ArchivedView
+      fetchNews={fetchArchivedNews}
+      newData={values.newData}
+      changeStatus={()=>unArchiveNew}
+      />
+
   );
 };
-export default archivedContainer;
+export default ArchivedContainer;

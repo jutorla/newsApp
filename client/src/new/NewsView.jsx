@@ -1,25 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './NewsView.scss'
-import New from "../components/NewComponent"
+import NewComponent from "../components/NewComponent"
 
 export default function NewsView(props){
   const {
     fetchNews,
     newData,
-    archiveNew,
+    changeStatus,
   } = props;
 
     return(
       <div className="new-view">
-         <span className="fetch-news" onClick={()=>fetchNews()}>Fetch News</span>
+         <span className="fetch-news" onClick={()=>fetchNews()}>Retrieve News</span>
          {newData.length? (newData.map((newData) => (
-        <New 
+        <NewComponent 
+        id={newData._id}
         title={newData.title}
         description={newData.description}
-        date={newData.date}
+        date={newData.date.substring(0, 10)}
         content={newData.content}
         author={newData.author}
-        archiveNew={archiveNew}
+        changeStatus={changeStatus}
         />
       ))):(
         <div className="no-news">Please click the button to check news</div>
