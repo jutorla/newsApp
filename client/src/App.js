@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import NewContainer from './new/NewContainer';
 import ArchivedContainer from './archived/ArchivedContainer';
 
