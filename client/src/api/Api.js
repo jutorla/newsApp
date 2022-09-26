@@ -15,7 +15,7 @@ const REQUEST_TIMEOUT="250000"
 const Api={
     async news(){
         try{
-            const url=ROOT_URL+"news"
+            const url=ROOT_URL+"news";
            return await getAxiosRequest().get(url);
         }
         catch (error){
@@ -24,7 +24,7 @@ const Api={
     },
     async archived(){
         try{
-            const url=ROOT_URL+"archivednews"
+            const url=ROOT_URL+"archivednews";
            return await getAxiosRequest().get(url);
         }
         catch (error){
@@ -33,7 +33,7 @@ const Api={
     },
     async archiveNew(id){
         try{
-            const url=ROOT_URL+"archiveNew/"+id
+            const url=ROOT_URL+"archiveNew/"+id;
            return await getAxiosRequest().post(url);
         }
         catch (error){
@@ -42,8 +42,17 @@ const Api={
     },
     async unArchiveNew(id){
         try{
-            const url=ROOT_URL+"unArchiveNew/"+id
+            const url=ROOT_URL+"unArchiveNew/"+id;
            return await getAxiosRequest().post(url);
+        }
+        catch (error){
+            return (error);
+        }
+    },
+    async deleteNew(id){
+        try{
+            const url=ROOT_URL+"deletenew/"+id;
+           return await getAxiosRequest().delete(url);
         }
         catch (error){
             return (error);

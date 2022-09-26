@@ -8,6 +8,7 @@ export default function ArchivedView(props){
     fetchNews,
     newData,
     changeStatus,
+    deleteNew,
   } = props;
 
     return(
@@ -21,7 +22,9 @@ export default function ArchivedView(props){
         date={newData.date.substring(0, 10)}
         content={newData.content}
         author={newData.author}
+        archiveDate={newData.archiveDate}
         changeStatus={changeStatus}
+        deleteNew={deleteNew}
         />
       ))):(
         <div className="no-news">Please click the button to check news</div>

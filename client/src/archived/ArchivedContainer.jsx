@@ -19,12 +19,17 @@ function ArchivedContainer(props) {
     await (Api.unArchiveNew(id))
     fetchArchivedNews()
       }
+    async function deleteNew(id){
+      await (Api.deleteNew(id))
+        fetchArchivedNews()
+      }
 
  return(
       <ArchivedView
       fetchNews={fetchArchivedNews}
       newData={values.newData}
       changeStatus={()=>unArchiveNew}
+      deleteNew={()=>deleteNew}
       />
 
   );
