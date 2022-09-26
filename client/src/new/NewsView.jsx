@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './NewsView.scss'
 import NewComponent from "../components/NewComponent"
+import ButtonComponent from '../components/ButtonComponent';
 
 export default function NewsView(props){
   const {
@@ -11,7 +12,7 @@ export default function NewsView(props){
 
     return(
       <div className="new-view">
-         <span className="fetch-news" onClick={()=>fetchNews()}>Retrieve News</span>
+       <ButtonComponent  classNameButton={'button-new-view'} text={'Check news'} onClick={fetchNews}/>
          {newData.length? (newData.map((newData) => (
         <NewComponent 
         id={newData._id}

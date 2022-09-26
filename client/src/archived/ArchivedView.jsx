@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './ArchivedView.scss'
 import NewComponent from "../components/NewComponent"
+import ButtonComponent from '../components/ButtonComponent';
 
 export default function ArchivedView(props){
   const {
@@ -10,8 +11,8 @@ export default function ArchivedView(props){
   } = props;
 
     return(
-      <div className="Archived-view">
-         <span className="fetch-news" onClick={()=>fetchNews()}>Retrieve archieved news</span>
+      <div className="new-view">
+       <ButtonComponent  classNameButton={"button-news-view"} text={'Check archived news'} onClick={fetchNews}/>
          {newData.length? (newData.map((newData) => (
         <NewComponent 
         id={newData._id}
@@ -25,7 +26,6 @@ export default function ArchivedView(props){
       ))):(
         <div className="no-news">Please click the button to check news</div>
       )}
-
       </div>
       
     );

@@ -1,11 +1,19 @@
 .button{
+    background-color: #b2b09f;
+    text-align: center;
+    width:64px;
+    height:20px;
+    cursor:pointer;
     border-style: dotted;
     border-width: 1px;
     border-color: black;
     font-size: 0.8rem;
-    .button-text{
-        padding: 10px;
-        width:64px;
-        height:64px;
-    }
+}.button:hover{
+    background-color: antiquewhite;
 }
+    .button-text{
+        padding: 0px;
+
+    }
+
+
