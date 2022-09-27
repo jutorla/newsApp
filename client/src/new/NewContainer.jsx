@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import NewsView from "./NewsView"
 import Api from '../api/Api';
 
@@ -8,8 +8,7 @@ function NewContainer(props) {
   })
 
   async function fetchNews(){
-    const fetchedNews= await (Api.news());
-    console.log(fetchedNews.data);
+    const fetchedNews= await (Api.fetchNews());
     setValues((oldValues) => ({
       ...oldValues,
       newData: fetchedNews.data,

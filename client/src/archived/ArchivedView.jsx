@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import './ArchivedView.scss'
 import NewComponent from "../components/NewComponent"
 import ButtonComponent from '../components/ButtonComponent';
@@ -33,13 +33,3 @@ export default function ArchivedView(props){
       
     );
   };
-
-  
-// NewView.propTypes = {
-//   recipesToAdd: PropTypes.arrayOf(PropTypes.instanceOf(Object)),
-// };
-// 
-// NewView.defaultProps = {
-//   recipesToAdd: [],
-// };
-  

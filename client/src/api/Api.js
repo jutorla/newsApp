@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 function getAxiosRequest(){
     return axios.create({
         baseURL:ROOT_URL,
@@ -13,7 +12,7 @@ function getAxiosRequest(){
 const ROOT_URL="http://localhost:5000/"
 const REQUEST_TIMEOUT="250000"
 const Api={
-    async news(){
+    async fetchNews(){
         try{
             const url=ROOT_URL+"news";
            return await getAxiosRequest().get(url);
@@ -22,7 +21,7 @@ const Api={
             return (error);
         }
     },
-    async archived(){
+    async fetchArchived(){
         try{
             const url=ROOT_URL+"archivednews";
            return await getAxiosRequest().get(url);
